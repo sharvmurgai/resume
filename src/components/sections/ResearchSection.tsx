@@ -24,6 +24,7 @@ const currentResearch = [
       "Developed Universal Differential Equation (UDE) models in Julia",
       "Simulated 2D Brusselator dynamics using finite-difference methods",
       "Disease modeling and SciML applications",
+      "Contributed to SciML libraries (SciMLSensitivity.jl, DiffEqFlux.jl)",
     ],
     color: "primary",
   },
