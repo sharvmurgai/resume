@@ -3,13 +3,6 @@ import { Play, ExternalLink, Eye } from "lucide-react";
 
 const videos = [
   {
-    title: "ReadEasy Pitch - Imagination in Action",
-    description: "Pitching ReadEasy at the Imagination in Action event",
-    url: "https://www.youtube.com/watch?v=5NURmCXVRzk",
-    thumbnail: "https://img.youtube.com/vi/5NURmCXVRzk/maxresdefault.jpg",
-    category: "Pitch",
-  },
-  {
     title: "ReadEasy Demo",
     description: "Demonstration of ReadEasy's features and capabilities",
     url: "https://www.youtube.com/watch?v=Uwfy2D4Tq5I",
