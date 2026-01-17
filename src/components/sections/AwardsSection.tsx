@@ -35,8 +35,14 @@ const majorAwards = [
   },
   {
     icon: Calculator,
-    title: "1-time AIME Qualifier",
+    title: "AIME Qualifier",
     description: "Distinction in AMC 12/AMC 10",
+    category: "Mathematics",
+  },
+  {
+    icon: Medal,
+    title: "Infinity International Math Competition",
+    description: "Individual Gold; Team Silver",
     category: "Mathematics",
   },
   {
@@ -204,6 +210,27 @@ export const AwardsSection = () => {
                   <p className="text-sm text-primary-foreground/80">ACS Fall 2025 Conference</p>
                 </div>
               </motion.div>
+
+              {/* Instagram post tile */}
+              <motion.a
+                href="https://www.instagram.com/p/C-sVKkDIdeZ/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src="https://i.ibb.co/0jTPDwcR/download.jpg"
+                  alt="TISB Instagram post - Congratulations to the IGCSE class of 2024"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-primary-foreground translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h4 className="font-semibold text-lg">TISB — IGCSE 2024</h4>
+                  <p className="text-sm text-primary-foreground/80">Instagram post — Congratulations to the IGCSE class of 2024</p>
+                </div>
+              </motion.a>
             </div>
           </motion.div>
         </motion.div>
