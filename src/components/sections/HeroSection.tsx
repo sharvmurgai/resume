@@ -113,35 +113,21 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Highlights carousel */}
-          <motion.div variants={item} className="mb-12 text-center">
-            <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Highlights</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {highlights.map((highlight, index) => (
-                <motion.span
-                  key={highlight}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  className="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium text-foreground hover:border-primary/50 hover:shadow-soft transition-all cursor-default"
-                >
-                  {highlight}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
+          {/* Highlights removed — using large stat boxes instead */}
 
           {/* Stats */}
           <motion.div 
             variants={item}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto"
           >
-            {[
-              { value: "15+", label: "Publications" },
-              { value: "NeurIPS", label: "Journal/Conference Reviewer" },
-              { value: "NVIDIA", label: "Award Winner" },
-              { value: "500+", label: "ReadEasy Users" },
-            ].map((stat, index) => (
+              {[
+                { value: "Stanford", label: "University Researcher" },
+                { value: "MIT", label: "Julia Lab Research Intern" },
+                { value: "NeurIPS", label: "Reviewer" },
+                { value: "NVIDIA", label: "Award Winner" },
+                { value: "15", label: "Publications" },
+                { value: "500+", label: "ReadEasy Users" },
+              ].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
