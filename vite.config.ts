@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/resume/" : "/",
+  // GitHub Pages project site lives under /resume/.
+  // We also allow overriding via env for CI (more reliable than mode inference).
+  base: process.env.VITE_BASE ?? (mode === "production" ? "/resume/" : "/"),
   server: {
     host: "::",
     port: 8080,
