@@ -2,11 +2,10 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/sections/HeroSection";
+
 import { ResearchSection } from "@/components/sections/ResearchSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
-import { StartupSection } from "@/components/sections/StartupSection";
-import { ReadEasySection } from "@/components/sections/ReadEasySection";
-import { ElementMindXSection } from "@/components/sections/ElementMindXSection";
+import { StartupsSection } from "@/components/sections/StartupsSection";
 import { MediaSection } from "@/components/sections/MediaSection";
 import { AwardsSection } from "@/components/sections/AwardsSection";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
@@ -26,15 +25,6 @@ const pageTransition = {
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("home");
-  const [activeStartup, setActiveStartup] = useState<"readeasy" | "elementmindx" | null>(null);
-
-  const handleSelectStartup = (startup: "readeasy" | "elementmindx") => {
-    setActiveStartup(startup);
-  };
-
-  const handleBackToStartups = () => {
-    setActiveStartup(null);
-  };
 
   const renderSection = () => {
     switch (activeTab) {
@@ -44,14 +34,8 @@ const Index = () => {
         return <ResearchSection />;
       case "experience":
         return <ExperienceSection />;
-      case "startup":
-        if (activeStartup === "readeasy") {
-          return <ReadEasySection onBack={handleBackToStartups} />;
-        }
-        if (activeStartup === "elementmindx") {
-          return <ElementMindXSection onBack={handleBackToStartups} />;
-        }
-        return <StartupSection onSelectStartup={handleSelectStartup} />;
+      case "startups":
+        return <StartupsSection />;
       case "media":
         return <MediaSection />;
       case "awards":
@@ -63,18 +47,10 @@ const Index = () => {
     }
   };
 
-  // Reset startup selection when changing tabs
-  const handleTabChange = (tab: string) => {
-    setActiveTab(tab);
-    if (tab !== "startup") {
-      setActiveStartup(null);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      <Navigation activeTab={activeTab} onTabChange={handleTabChange} />
-      
+      <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+
       <main>
         <AnimatePresence mode="wait">
           <motion.div
@@ -89,7 +65,7 @@ const Index = () => {
           </motion.div>
         </AnimatePresence>
       </main>
-      
+
       <Footer />
     </div>
   );
