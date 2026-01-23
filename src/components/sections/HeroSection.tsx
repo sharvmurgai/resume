@@ -133,7 +133,7 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
-                className="glass-card p-5 flex-1 min-w-[140px] max-w-[180px]"
+                className={`glass-card p-5 ${index === 0 ? 'w-[180px]' : 'flex-1 min-w-[140px] max-w-[180px]'}`}
               >
                 <div className="text-2xl md:text-3xl font-bold font-display gradient-text whitespace-nowrap">
                   {stat.value}
