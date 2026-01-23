@@ -118,7 +118,7 @@ export const HeroSection = () => {
           {/* Stats */}
           <motion.div 
             variants={item}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto"
+            className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto"
           >
               {[
                 { value: "Stanford", label: "University Researcher" },
@@ -133,7 +133,7 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
-                className="glass-card p-5"
+                className="glass-card p-5 flex-1 min-w-[140px] max-w-[180px]"
               >
                 <div className="text-2xl md:text-3xl font-bold font-display gradient-text whitespace-nowrap">
                   {stat.value}
