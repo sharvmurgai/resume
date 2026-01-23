@@ -31,7 +31,7 @@ export const Footer = () => {
 
         <div className="mt-8 pt-6 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Sharv Murgai. Built with passion for college applications.
+            © {new Date().getFullYear()} Sharv Murgai.
           </p>
         </div>
       </div>
