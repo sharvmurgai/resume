@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, Users, School, Trophy, ExternalLink, Award, ArrowLeft } from "lucide-react";
-
-interface ReadEasySectionProps {
-  onBack: () => void;
-}
+import { Sparkles, Users, School, Trophy, ExternalLink, Presentation, Award } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -69,7 +65,7 @@ const milestones = [
   },
 ];
 
-export const ReadEasySection = ({ onBack }: ReadEasySectionProps) => {
+export const ReadEasySection = () => {
   return (
     <section className="min-h-screen pt-24 pb-16 pattern-overlay">
       <div className="section-container">
@@ -78,16 +74,6 @@ export const ReadEasySection = ({ onBack }: ReadEasySectionProps) => {
           initial="hidden"
           animate="show"
         >
-          {/* Back Button */}
-          <motion.button
-            variants={item}
-            onClick={onBack}
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Startups
-          </motion.button>
-
           {/* Header */}
           <motion.div variants={item} className="text-center mb-12">
             <span className="badge-gold mb-4 inline-block">
