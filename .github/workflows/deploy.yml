@@ -23,6 +23,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE: /resume/
 
       - name: Ensure SPA routing on GitHub Pages
         # copy index.html to 404.html so BrowserRouter refreshes work
