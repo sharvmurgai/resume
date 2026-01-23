@@ -10,7 +10,7 @@ const tabs = [
   { id: "home", label: "Home" },
   { id: "research", label: "Research" },
   { id: "experience", label: "Experience" },
-  { id: "startup", label: "Startup" },
+  { id: "startups", label: "Startup" },
   { id: "media", label: "Media" },
   { id: "awards", label: "Awards" },
   { id: "leadership", label: "Leadership" },
