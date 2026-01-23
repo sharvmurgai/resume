@@ -1,114 +1,118 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Rocket, Brain, ArrowRight } from "lucide-react";
+import { ReadEasySection } from "./ReadEasySection";
+import { ElementMindXSection } from "./ElementMindXSection";
+import { ArrowLeft, BookOpen, BrainCircuit, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
+export const StartupsSection = () => {
+    const [selectedStartup, setSelectedStartup] = useState<"readeasy" | "elementmindx" | null>(null);
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-interface StartupSectionProps {
-  onSelectStartup: (startup: "readeasy" | "elementmindx") => void;
-}
-
-const startups = [
-  {
-    id: "readeasy" as const,
-    name: "ReadEasy",
-    tagline: "AI-Powered Text Simplification",
-    description: "CTO & Co-founder of an EdTech startup bridging literacy gaps through AI-powered text adaptation.",
-    icon: Brain,
-    color: "from-accent to-primary",
-    stats: ["500+ Users", "10+ Schools", "NeurIPS 2025"],
-  },
-  {
-    id: "elementmindx" as const,
-    name: "ElementMindX",
-    tagline: "Coming Soon",
-    description: "A new venture in development. More details to be announced.",
-    icon: Rocket,
-    color: "from-primary to-accent",
-    stats: ["In Development"],
-  },
-];
-
-export const StartupSection = ({ onSelectStartup }: StartupSectionProps) => {
-  return (
-    <section className="min-h-screen pt-24 pb-16 pattern-overlay">
-      <div className="section-container">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          {/* Header */}
-          <motion.div variants={item} className="text-center mb-16">
-            <span className="badge-gold mb-4 inline-block">
-              <Sparkles className="w-3 h-3 mr-1 inline" />
-              Entrepreneurship
-            </span>
-            <h2 className="hero-title text-4xl md:text-5xl mb-4">
-              My <span className="gradient-text-gold">Startups</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Building innovative solutions to real-world problems through technology and entrepreneurship.
-            </p>
-          </motion.div>
-
-          {/* Startup Cards */}
-          <motion.div 
-            variants={item}
-            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-          >
-            {startups.map((startup) => (
-              <motion.button
-                key={startup.id}
-                onClick={() => onSelectStartup(startup.id)}
-                className="glass-card p-8 text-left group hover:shadow-glow transition-all duration-300 cursor-pointer"
-                whileHover={{ scale: 1.02, y: -4 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${startup.color} flex items-center justify-center mb-6`}>
-                  <startup.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-                
-                <h3 className="font-display text-2xl font-bold mb-2 gradient-text-gold">
-                  {startup.name}
-                </h3>
-                <p className="text-sm text-accent font-medium mb-3">
-                  {startup.tagline}
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  {startup.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {startup.stats.map((stat) => (
-                    <span 
-                      key={stat}
-                      className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
+    if (selectedStartup === "readeasy") {
+        return (
+            <div className="relative">
+                <div className="fixed top-20 left-4 z-40 md:left-8">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setSelectedStartup(null)}
+                        className="gap-2 bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-primary/10"
                     >
-                      {stat}
-                    </span>
-                  ))}
+                        <ArrowLeft className="w-4 h-4" />
+                        Back to Startups
+                    </Button>
                 </div>
+                <ReadEasySection />
+            </div>
+        );
+    }
 
-                <div className="flex items-center gap-2 text-accent font-medium group-hover:gap-3 transition-all">
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
+    if (selectedStartup === "elementmindx") {
+        return (
+            <div className="relative">
+                <div className="fixed top-20 left-4 z-40 md:left-8">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setSelectedStartup(null)}
+                        className="gap-2 bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-primary/10"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Back to Startups
+                    </Button>
                 </div>
-              </motion.button>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
+                <ElementMindXSection />
+            </div>
+        );
+    }
+
+    return (
+        <section className="min-h-screen pt-32 pb-16 pattern-overlay">
+            <div className="section-container">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center mb-16"
+                >
+                    <span className="badge-gold mb-4 inline-block">
+                        Entrepreneurship
+                    </span>
+                    <h2 className="hero-title text-4xl md:text-5xl mb-6">
+                        My <span className="gradient-text-gold">Startups</span>
+                    </h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Building innovative solutions to solve real-world problems.
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    {/* ReadEasy Card */}
+                    <motion.div
+                        onClick={() => setSelectedStartup("readeasy")}
+                        className="glass-card p-10 cursor-pointer group relative overflow-hidden"
+                        whileHover={{ scale: 1.02 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 }}
+                    >
+                        <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                            <BookOpen className="w-24 h-24 text-accent/10 -rotate-12 transform group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+
+                        <BookOpen className="w-12 h-12 text-accent mb-6" />
+                        <h3 className="text-3xl font-bold mb-3 group-hover:text-accent transition-colors">ReadEasy</h3>
+                        <p className="text-muted-foreground text-lg mb-6">
+                            AI-powered text simplification and readability adaptation platform bridging literacy gaps.
+                        </p>
+                        <span className="text-accent font-medium flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                            View Details <div className="i-lucide-arrow-right w-4 h-4" />
+                        </span>
+                    </motion.div>
+
+                    {/* ElementMindX Card */}
+                    <motion.div
+                        onClick={() => setSelectedStartup("elementmindx")}
+                        className="glass-card p-10 cursor-pointer group relative overflow-hidden h-full flex flex-col"
+                        whileHover={{ scale: 1.02 }}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                            <Globe className="w-24 h-24 text-primary/10 -rotate-12 transform group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+
+                        <Globe className="w-12 h-12 text-primary mb-6" />
+                        <h3 className="text-3xl font-bold mb-3 group-hover:text-primary transition-colors">ElementMindX</h3>
+                        <p className="text-muted-foreground text-lg mb-6 flex-grow">
+                            ML-powered "what-if" simulation platform for critical chemistry elements - turning policy shocks into clear before/after trade-flow maps, winners/losers, and resilience insights.
+                        </p>
+                        <span className="text-primary font-medium flex items-center gap-2 group-hover:translate-x-2 transition-transform mt-auto">
+                            View Details <div className="i-lucide-arrow-right w-4 h-4" />
+                        </span>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
 };
