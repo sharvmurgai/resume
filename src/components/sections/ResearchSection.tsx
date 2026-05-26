@@ -42,6 +42,13 @@ const currentResearch = [
 ];
 
 const publications = [
+  {
+    title: "ElementMindX: Offline Supplier-Substitution Ranking for Natural-Language Trade-Shock Decision Support",
+    venue: "ICML 2026 Workshop",
+    type: "Accepted",
+    category: "Chemistry + Economics + ML",
+    link: "#",
+  },
   // NeurIPS Workshop Papers
   {
     title: "Developing Surrogates for Epidemic Agent-Based Models via Scientific Machine Learning",
