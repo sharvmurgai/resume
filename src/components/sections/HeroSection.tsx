@@ -126,7 +126,7 @@ export const HeroSection = () => {
                 { value: "MIT", label: "Julia Lab Research Intern" },
                 { value: "NeurIPS", label: "Author / Publisher / Reviewer" },
                 { value: "NVIDIA", label: "Award Winner" },
-                { value: "15", label: "Publications" },
+                { value: "16", label: "Publications" },
                 { value: "500+", label: "ReadEasy Users" },
               ].map((stat, index) => (
               <motion.div

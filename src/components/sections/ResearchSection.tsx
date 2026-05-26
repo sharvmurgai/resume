@@ -199,7 +199,7 @@ export const ResearchSection = () => {
               Academic <span className="gradient-text">Contributions</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              15+ peer-reviewed publications across NeurIPS, IEEE, and ACS conferences.
+              16+ peer-reviewed publications across NeurIPS, IEEE, and ACS conferences.
             </p>
           </motion.div>
 
