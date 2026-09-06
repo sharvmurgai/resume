@@ -11,6 +11,7 @@ const tabs = [
   { id: "research", label: "Research" },
   { id: "experience", label: "Experience" },
   { id: "startups", label: "Startup" },
+  { id: "side-projects", label: "Side Projects" },
   { id: "media", label: "Media" },
   { id: "awards", label: "Awards" },
   { id: "leadership", label: "Leadership" },

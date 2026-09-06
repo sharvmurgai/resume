@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ResearchSection } from "@/components/sections/ResearchSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { StartupsSection } from "@/components/sections/StartupsSection";
+import { SideProjectsSection } from "@/components/sections/SideProjectsSection";
 import { MediaSection } from "@/components/sections/MediaSection";
 import { AwardsSection } from "@/components/sections/AwardsSection";
 import { LeadershipSection } from "@/components/sections/LeadershipSection";
@@ -36,6 +37,8 @@ const Index = () => {
         return <ExperienceSection />;
       case "startups":
         return <StartupsSection />;
+      case "side-projects":
+        return <SideProjectsSection />;
       case "media":
         return <MediaSection />;
       case "awards":
