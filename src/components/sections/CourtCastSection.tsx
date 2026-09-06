@@ -5,7 +5,6 @@ import {
   Database,
   ExternalLink,
   Film,
-  Github,
   Layers3,
   RadioTower,
   ScanLine,
@@ -17,7 +16,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 const DEMO_URL = "https://sharvmurgai.github.io/courtcast/";
-const REPOSITORY_URL = "https://github.com/sharvmurgai/courtcast";
 
 const container = {
   hidden: { opacity: 0 },
@@ -105,11 +103,6 @@ export const CourtCastSection = () => {
               <Button asChild size="lg" className="rounded-full px-6">
                 <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">
                   Launch live demo <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-6">
-                <a href={REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
-                  View source <Github className="h-4 w-4" />
                 </a>
               </Button>
             </div>
